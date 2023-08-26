@@ -125,6 +125,7 @@ setting - action 에서 배포 진행 상황을 확인할수있다.
 
 **그런데 하얀 화면만 표시가 된다.**
 리소스 주소가 서브 디렉토리 기준이라 그렇다.
+
 **vite.config.js**
 
 ```jsx
@@ -138,4 +139,22 @@ export default defineConfig({
   base: "/TodoList_react/",
   plugins: [react(), jsconfigPaths()],
 });
+```
+
+배포 후 수정사항이 있을때는 아래 명령어를 반복해주면 된다
+
+```bash
+npm run build
+npx gh-pages -d dist
+```
+
+참고: 캐쉬 강력하게 지우기
+`ctrl + shift + R`
+
+# zustand
+
+## zustand 설치
+
+```bash
+npm i zustand -S
 ```
