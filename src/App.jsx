@@ -5,7 +5,7 @@ function App() {
   const [list, setList] = useState([
     {
       id: new Date().getTime(),
-      todo: "투두",
+      todo: "Todo",
       completed: false,
     },
   ]);
