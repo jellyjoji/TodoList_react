@@ -24,12 +24,23 @@ function App() {
       },
     ];
     setList(newList);
-    // debugger;
-    form.reset();
-    // alert(todo);
-    e.target.reset;
-    // debugger;
+
+    // form.reset();
+
+    // e.target.reset;
   };
+
+  const deleteTodo = (id) => {
+    // filter 는 true 를 리턴하면 배열안에 포함/flase를 리턴하면 배열에서 제외
+    const newList = list.filter((data) => {
+      if (data.id === id) {
+        return false;
+      }
+      return true;
+    });
+    setList(newList);
+  };
+
   console.log(list);
   // checkbutton 을 눌렀을때 set list 를 호출
   const complete = (id) => {
@@ -105,7 +116,11 @@ function App() {
                   >
                     {todo}
                   </span>
-                  <button name="delete" className="hidden group-hover:block">
+                  <button
+                    onClick={() => deleteTodo(id)}
+                    name="delete"
+                    className="hidden group-hover:block"
+                  >
                     <svg
                       className="w-5 h-5 text-gray-400 fill-current mx-1"
                       version="1.1"
