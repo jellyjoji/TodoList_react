@@ -1,8 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import jsConfigPath from "vite-jsconfig-paths";
+import jsconfigPaths from "vite-jsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), jsConfigPath()],
+  // 여기서 내 깃헙 레포 이름을 똑같이 적어준다
+  base: "/TodoList_react/",
+  plugins: [react(), jsconfigPaths()],
 });
